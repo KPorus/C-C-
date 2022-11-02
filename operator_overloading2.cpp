@@ -24,15 +24,26 @@ test::~test()
 
 
 // this is called operator overloading 
-void operator <<(ostream& COUT, test& ob)
+//  below one is only to print one class ob value
+// void operator <<(ostream& COUT, test& ob)
+// {
+//     COUT << "NAME:" << ob.Name << "\n";
+//     COUT << "Count:" << ob.Count << "\n";
+// }
+
+// print two or many object value or one object value  of class
+ostream& operator <<(ostream& COUT, test& ob)
 {
     COUT << "NAME:" << ob.Name << "\n";
     COUT << "Count:" << ob.Count << "\n";
+    return COUT;
 }
 
 int main()
 {
     test ob = test("fardin",10);
-    std::cout<<ob;
+    test ob2 = test("anika",10);
+    test ob3 = test("Nargis",10);
+    cout<< ob << ob2 << ob3;
     return 0;
 }
