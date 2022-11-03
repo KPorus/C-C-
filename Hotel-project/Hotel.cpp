@@ -40,7 +40,9 @@ hotel::hotel()
     {
         cout<<"\t\tEnter your username:\t";
         cin>>name;
-        cout<<"\t\tEnter your pass:\t";
+        cout<<"\t\tEnter your Eamil:\t";
+        cin>>name;
+        cout<<"\t\tSet-up your pass:\t";
         cin>>pass;
         fstream myFile;
         myFile.open("user-information.txt",ios::app);
