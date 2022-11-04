@@ -1,6 +1,39 @@
-ostream& operator <<(ostream& COUT, test& ob)
+#include<iostream>
+
+class A 
 {
-    COUT << "NAME:" << ob.Name << "\n";
-    COUT << "Count:" << ob.Count << "\n";
-    return COUT;
+    public:
+
+    void display1 (){
+        std::cout<<"called from A\n";
+    }
+    void print ()
+    {
+        std::cout<<"From A\n";
+    }
+};
+
+class B : public A
+{
+    public:
+    void display()
+    {
+        std::cout<<"called from B \n";
+    }
+    void print ()
+    {
+        std::cout<<"from B\n";
+    }
+};
+
+int main()
+{
+    A ob;
+    B o;
+    B *p;
+    p = &o;
+    p->print();
+    p->display(); // printing Class b function
+    p->display1();// printing class a function
+    return 0;
 }
