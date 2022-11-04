@@ -53,7 +53,7 @@ hotel::hotel()
 
                 myFile <<pass<<endl;
                 system("cls");
-                cout<<"\t\t_________________register successfull____________________\n";
+                cout<<"\t\t_________________Register successfull____________________\n";
                 myFile.close();
             }
             goto login;
@@ -79,7 +79,7 @@ hotel::hotel()
             else{
                     system("cls");
                 cout<<"\t\t______________________________________________________________________\n\n";
-            cout<<"\t\t___________________________wrong pass or name. Try again!!!______________\n\n";
+            cout<<"\t\t___________________________Wrong pass or name. Try again!!!______________\n\n";
             }
         }
 
@@ -359,6 +359,7 @@ hotel::hotel()
                                 cin>>qroast;
                                 cout<<"\n\t\tPlease enter beef quantity: ";
                                 cin>>qbeef;
+                                system("cls");
                                 if(choise == 2)
                                 {
 

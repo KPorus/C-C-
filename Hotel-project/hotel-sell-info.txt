@@ -1,0 +1,16 @@
+
+Queen room quantity:0
+Double room quantity:0
+Single room quantity:0
+bread quantity:0
+milk quantity:0
+roast quantity:0
+beef quantity:0
+
+Queen room quantity:10
+Double room quantity:20
+Single room quantity:10
+bread quantity:20
+milk quantity:10
+roast quantity:20
+beef quantity:30
