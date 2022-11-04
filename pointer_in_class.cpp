@@ -4,7 +4,7 @@ class A
 {
     public:
 
-    void display (){
+    void display1 (){
         std::cout<<"called from A\n";
     }
 };
@@ -24,5 +24,6 @@ int main()
     B o;
     B *p;
     p->display(); // printing Class b function
+    p->display1();// printing class a function
     return 0;
 }
