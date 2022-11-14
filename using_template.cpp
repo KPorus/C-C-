@@ -16,7 +16,6 @@ public:
 
      T multiplication(Vector &ob)
         {
-
             for(int i = 0; i<s ; i++)
             {
                 result += this->arr[i] * ob.arr[i];

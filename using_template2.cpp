@@ -12,13 +12,13 @@ myclass ( type1 a, type2 b)
     j = b;
 }
 void show () {
-    cout<<i+j<<endl;
+    cout<<i<<j<<endl;
      }
 };
 
 int main ()
 {
-myclass<int,double> ob1(10,23.4);
+myclass<int,string> ob1(10,"Omair");
 ob1.show();
 return 0;
 }

@@ -1,1 +1,1 @@
-this.
+ p->display();

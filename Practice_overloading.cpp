@@ -1,40 +1,77 @@
 #include <iostream>
 using namespace std;
 
-
-class Demo
+class Demo1
 {
-    int x,y;
-    public:
-    Demo()
-    {
-        cout<<"Enter the two value: \n";
-        cin>>x>>y;
-    }
+    int x, y;
 
-    Demo(int i, int j)
+    void setData()
     {
-        x = i;
-        y = j;
+        cout << "Enter the value of x and y:\n";
+        cin >> x >> y;
     }
+    friend class Demo2;
 
-    int  operator <(Demo ob)
+void show()
+{
+    cout<<"Value of x: "<<x<<"Value of y : "<<y<<"\n";
+}
+};
+
+class Demo2
+{
+
+public:
+
+    void display(Demo1 ob)
     {
-        return (x < ob.x)||(y < ob.y);
+        ob.setData();
+        ob.show();
     }
 };
 
+
 int main()
 {
-    Demo ob,ob1(10,20);
-    if(ob < ob1)
-    {
-        cout<<"Ob1 is greater than ob\n";
-    }else{
-        cout<<"ob is greater than ob1\n";
-    }
+    Demo1 ob;
+    Demo2 ob2;
+    ob2.display(ob);
     return 0;
 }
+
+// class Demo
+// {
+//     int x,y;
+//     public:
+//     Demo()
+//     {
+//         cout<<"Enter the two value: \n";
+//         cin>>x>>y;
+//     }
+
+//     Demo(int i, int j)
+//     {
+//         x = i;
+//         y = j;
+//     }
+
+//     int  operator <(Demo ob)
+//     {
+//         return (x < ob.x)||(y < ob.y);
+//     }
+// };
+
+// int main()
+// {
+//     Demo ob,ob1(10,20);
+//     if(ob < ob1)
+//     {
+//         cout<<"Ob1 is greater than ob\n";
+//     }else{
+//         cout<<"ob is greater than ob1\n";
+//     }
+//     return 0;
+// }
 // class coord
 // {
 //     int x, y;
@@ -126,7 +163,6 @@ int main()
 //     {
 //         cout<<"Value : "<<x<<"\n";
 //     }
-
 //     Demo operator +(Demo bb)
 //     {
 //         Demo zz;
@@ -138,7 +174,6 @@ int main()
 // int main()
 // {
 //     Demo xx,bb,zz;
-
 //     xx.getData();
 //     bb.getData();
 //     zz = xx + bb;
