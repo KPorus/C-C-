@@ -39,8 +39,6 @@
 //         p3.print();
 //         }
 
-
-
 class two
 {
     int x, y;
@@ -59,7 +57,6 @@ two :: two()
     std::cout<<"Enter the value of x and y: ";
     std::cin>>x>>y;
 }
-
 two two :: operator ++(int)
 {
     total = x+y;
