@@ -4,7 +4,7 @@ class A
 {
     public:
 
-    void display1 (){
+    virtual void display (){
         std::cout<<"called from A\n";
     }
     void print ()
@@ -30,10 +30,10 @@ int main()
 {
     A ob;
     B o;
-    B *p;
+    // here base called derived class B function display
+    A *p;
     p = &o;
-    p->print();//called from b;
-    p->display(); // printing Class b function
-    p->display1();// printing class a function
+    p->print();//called from a because print is not virtual function 
+    p->display(); // printing Class b function case display is virtual function
     return 0;
 }

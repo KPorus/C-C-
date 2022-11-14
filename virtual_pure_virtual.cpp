@@ -12,7 +12,7 @@ public:
 class Tritangler : virtual public Shape
 {
 public:
-    virtual void setdata()
+     void setdata()
     {
         std::cout << "Enter the value you want : \n";
         std::cin >> x >> y >> z;
