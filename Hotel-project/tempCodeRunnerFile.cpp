@@ -1,1 +1,1 @@
- // void recipt();
+goto login;
