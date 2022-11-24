@@ -34,9 +34,9 @@ hotel::hotel()
     system("cls");
 login:
     std::cout << "\n\t\t\tWelcome to hotel Morning Star!!!!\n\n";
-    std::cout << "\t\t 1.User Login\n";
-    std::cout << "\t\t 2.New User registration\n";
-    std::cout << "\t\t 3.hotel Managment (Private)\n";
+    std::cout << "\t\t 1.Login\n";
+    std::cout << "\t\t 2.Registration\n";
+    std::cout << "\t\t 3.Availability (Private)\n";
     std::cout << "\t\t 4.Quit\n";
     std::cin >> userChoise;
 
@@ -44,12 +44,10 @@ login:
     {
         std::cout << "\t\tEnter your username:\t";
         std::cin >> name;
-        std::cout << "\t\tEnter your Eamil:\t";
-        std::cin >> name;
         std::cout << "\t\tSet-up your pass:\t";
         std::cin >> pass;
         fstream myFile;
-        myFile.open("user-information.txt", ios::app);
+        myFile.open("user-information", ios::app);
 
         if (myFile.is_open())
         {
@@ -74,7 +72,7 @@ login:
         int ok;
         while (myFile >> user >> id)
         {
-            if (user == name && id == pass)
+            if ((user == name) && (id == pass))
             {
                 ok = 1;
                 system("cls");
@@ -255,31 +253,31 @@ login:
                 if (total_qroom > 0)
                 {
                     std::cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n";
-                    std::cout << "\t\tSir you have to allowed " << qquant << "queen bed room.\n";
+                    std::cout << "\t\tSir you have to allowed " << qquant << " queen bed room.\n";
                     std::cout << "\t\tPayment successful \n";
                 }
                 if (total_droom > 0)
                 {
                     std::cout << "\t\tSir you have to pay " << total_droom << " for stay of " << day << " days.\n";
-                    std::cout << "\t\tSir you have to allowed " << dquant << "double bed room\n";
+                    std::cout << "\t\tSir you have to allowed " << dquant << " double bed room\n";
                     std::cout << "\t\tPayment successful \n";
                 }
                 if (total_sroom > 0)
                 {
                     std::cout << "\t\tSir you have to pay " << total_sroom << " for stay of " << day << " days.\n";
-                    std::cout << "\t\tSir you have to allowed " << squant << "single bed room\n";
+                    std::cout << "\t\tSir you have to allowed " << squant << " single bed room\n";
                     std::cout << "\t\tPayment successful \n";
                 }
                 if (total_bread > 0)
                 {
                     std::cout << "\t\tSir you have to pay " << total_bread << " for bread.\n";
-                    std::cout << "\t\tSir you buy " << bquant << "bread \n";
+                    std::cout << "\t\tSir you buy " << bquant << " bread \n";
                     std::cout << "\t\tPayment successful \n";
                 }
                 if (total_milk > 0)
                 {
                     std::cout << "\t\tSir you have to pay " << total_milk << " for milk.\n";
-                    std::cout << "\t\tSir you buy " << mquant << "ml milk\n";
+                    std::cout << "\t\tSir you buy " << mquant << " ml milk\n";
                     std::cout << "\t\tPayment successful \n";
                 }
                 if (total_roast > 0)
@@ -300,6 +298,20 @@ login:
                 system("cls");
                 if (choise == 0)
                 {
+                    total_beef = 0;
+                    total_bread = 0;
+                    total_droom = 0;
+                    total_milk = 0;
+                    total_roast = 0;
+                    total_qroom = 0;
+                    total_sroom = 0;
+                    bequant = 0;
+                    rquant = 0;
+                    mquant = 0;
+                    bquant = 0;
+                    qquant = 0;
+                    dquant = 0;
+                    squant = 0;
                     goto login;
                 }
                 break;
