@@ -1,7 +1,27 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include<conio.h>
 using namespace std;
+
+
+
+string password (){
+int ch;
+
+ string pass;
+ ch=getch();
+    while(ch != 13){
+        pass.push_back(ch);
+        cout<< '*';
+        ch=getch();
+    }
+return pass;
+}
+
+
+
+
 
 class hotel
 {
@@ -45,7 +65,7 @@ login:
         std::cout << "\t\tEnter your username:\t";
         std::cin >> name;
         std::cout << "\t\tSet-up your pass:\t";
-        std::cin >> pass;
+         pass=password();
         fstream myFile;
         myFile.open("user-information", ios::app);
 
@@ -67,7 +87,7 @@ login:
         std::cout << "\t\tEnter your username:\t";
         std::cin >> name;
         std::cout << "\t\tEnter your password:\t";
-        std::cin >> pass;
+        pass=password();
         ifstream myFile("user-information.txt");
         int ok;
         while (myFile >> user >> id)
