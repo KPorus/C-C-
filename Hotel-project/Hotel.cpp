@@ -40,6 +40,15 @@ public:
     int userchoice;
     void foodchoice()
     {
+        cout << "\n\t\tHere is the menu of foods:\n";
+        cout << "\t\t1)bread\n";
+        cout << "\t\t2)milk\n";
+        cout << "\t\t3)roast\n";
+        cout << "\t\t4)beef\n";
+
+        cout << "\t\tWhat do you want? ";
+        cin >> choice;
+        
         if (choice == 1)
         {
             cout << "\n\t\tHow much bread do you want sir? ";
@@ -297,7 +306,7 @@ login:
                 cout << "\n\t\t3)Single Bed\n\t\t";
                 cin >> rchoice;
                 roomchoice();
-                if (rchoice > 4)
+                if (rchoice >= 4)
                 {
                     system("cls");
                     goto m;
@@ -305,15 +314,6 @@ login:
                 break;
 
             case 2:
-
-                cout << "\n\t\tHere is the menu of foods:\n";
-                cout << "\t\t1)bread\n";
-                cout << "\t\t2)milk\n";
-                cout << "\t\t3)roast\n";
-                cout << "\t\t4)beef\n";
-
-                cout << "\t\tWhat do you want? ";
-                cin >> choice;
 
                 foodchoice();
 
@@ -342,7 +342,7 @@ login:
                     squant = 0;
                     goto login;
                 }
-                
+
                 break;
 
             default:
