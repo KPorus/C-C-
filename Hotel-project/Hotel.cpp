@@ -33,6 +33,8 @@ private:
     int total_qroom = 0, total_droom = 0, total_sroom = 0, total_bread = 0, total_milk = 0, total_roast = 0, total_beef = 0;
     // quant of user
     int qquant = 0, dquant = 0, squant = 0, bquant = 0, mquant = 0, rquant = 0, bequant = 0;
+    //stay of user
+    int qday = 0, dday = 0, sday = 0;
 
 public:
     string name;
@@ -131,9 +133,9 @@ public:
                 cout << "\n\t\t How many days you want to check in?\n\t\t";
                 cin >> day;
                 sqroom = sqroom + qquant;
-                total_qroom = (total_qroom + qquant * 4000) * day;
+                total_qroom = (total_qroom + qquant * 4000) * qday;
                 cout << "\n\t\t" << qquant << " rooms have beed alloted.\n";
-                cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n\t\tYou can recive your recipt\n";
+                cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << qday << " days.\n\t\tYou can recive your recipt\n";
             }
             else
             {
@@ -149,9 +151,9 @@ public:
                 cout << "\n\t\t How many days you want to check in?\n\t\t";
                 cin >> day;
                 sdroom = sdroom + dquant;
-                total_droom = (total_droom + dquant * 2000) * day;
+                total_droom = (total_droom + dquant * 2000) * dday;
                 cout << "\n\t\t" << dquant << " rooms have beed alloted.\n";
-                cout << "\n\t\tSir you have to pay " << total_droom << " for stay of " << day << " days.\n\t\tYou can pay for room or later\n";
+                cout << "\n\t\tSir you have to pay " << total_droom << " for stay of " << dday << " days.\n\t\tYou can pay for room or later\n";
             }
             else
             {
@@ -167,9 +169,9 @@ public:
                 cout << "\n\t\t How many days you want to check in?\n\t\t";
                 cin >> day;
                 ssroom = ssroom + squant;
-                total_sroom = (total_sroom + squant * 1000) * day;
+                total_sroom = (total_sroom + squant * 1000) * sday;
                 cout << "\n\t\t" << squant << " rooms have beed alloted.\n";
-                cout << "\n\t\tSir you have to pay " << total_sroom << " for stay of " << day << " days.\n\t\tYou can pay for room or later\n";
+                cout << "\n\t\tSir you have to pay " << total_sroom << " for stay of " << sday << " days.\n\t\tYou can pay for room or later\n";
             }
             else
             {
@@ -185,19 +187,19 @@ public:
         cout << "\n\n\t\t============Here is your Recipt===========" << endl;
         if (total_qroom > 0)
         {
-            cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n";
+            cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << qday << " days.\n";
             cout << "\t\tSir you have to allowed " << qquant << " queen bed room.\n";
             cout << "\t\tPayment successful \n";
         }
         if (total_droom > 0)
         {
-            cout << "\t\tSir you have to pay " << total_droom << " for stay of " << day << " days.\n";
+            cout << "\t\tSir you have to pay " << total_droom << " for stay of " << dday << " days.\n";
             cout << "\t\tSir you have to allowed " << dquant << " double bed room\n";
             cout << "\t\tPayment successful \n";
         }
         if (total_sroom > 0)
         {
-            cout << "\t\tSir you have to pay " << total_sroom << " for stay of " << day << " days.\n";
+            cout << "\t\tSir you have to pay " << total_sroom << " for stay of " << sday << " days.\n";
             cout << "\t\tSir you have to allowed " << squant << " single bed room\n";
             cout << "\t\tPayment successful \n";
         }
