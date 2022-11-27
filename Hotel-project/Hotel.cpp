@@ -48,7 +48,7 @@ public:
 
         cout << "\t\tWhat do you want? ";
         cin >> choice;
-        
+
         if (choice == 1)
         {
             cout << "\n\t\tHow much bread do you want sir? ";
@@ -117,6 +117,11 @@ public:
 
     void roomchoice()
     {
+        cout << "\n\n\t\t What kind of room do you want? ";
+        cout << "\n\t\t1)Queen Bed";
+        cout << "\n\t\t2)Double Bed";
+        cout << "\n\t\t3)Single Bed\n\t\t";
+        cin >> rchoice;
         if (rchoice == 1)
         {
             cout << "\n\t\tHow Many Queen bed room do you want?\n\t\t";
@@ -175,6 +180,9 @@ public:
 
     void recipt()
     {
+        system("cls");
+
+        cout << "\n\n\t\t============Here is your Recipt===========" << endl;
         if (total_qroom > 0)
         {
             cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n";
@@ -300,11 +308,7 @@ login:
             switch (choice)
             {
             case 1:
-                cout << "\n\n\t\t What kind of room do you want? ";
-                cout << "\n\t\t1)Queen Bed";
-                cout << "\n\t\t2)Double Bed";
-                cout << "\n\t\t3)Single Bed\n\t\t";
-                cin >> rchoice;
+
                 roomchoice();
                 if (rchoice >= 4)
                 {
@@ -320,9 +324,6 @@ login:
                 break;
             case 3:
 
-                system("cls");
-
-                cout << "\n\n\t\t============Here is your Recipt===========" << endl;
                 recipt();
                 if (choice == 0)
                 {
