@@ -131,7 +131,7 @@ public:
             if ((qroom - sqroom) >= qquant)
             {
                 cout << "\n\t\t How many days you want to check in?\n\t\t";
-                cin >> day;
+                cin >> qday;
                 sqroom = sqroom + qquant;
                 total_qroom = (total_qroom + qquant * 4000) * qday;
                 cout << "\n\t\t" << qquant << " rooms have beed alloted.\n";
@@ -149,7 +149,7 @@ public:
             if ((droom - sdroom) >= dquant)
             {
                 cout << "\n\t\t How many days you want to check in?\n\t\t";
-                cin >> day;
+                cin >> dday;
                 sdroom = sdroom + dquant;
                 total_droom = (total_droom + dquant * 2000) * dday;
                 cout << "\n\t\t" << dquant << " rooms have beed alloted.\n";
@@ -167,7 +167,7 @@ public:
             if ((sroom - ssroom) >= squant)
             {
                 cout << "\n\t\t How many days you want to check in?\n\t\t";
-                cin >> day;
+                cin >> sday;
                 ssroom = ssroom + squant;
                 total_sroom = (total_sroom + squant * 1000) * sday;
                 cout << "\n\t\t" << squant << " rooms have beed alloted.\n";
