@@ -1,50 +1,220 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include<conio.h>
+#include <conio.h>
 using namespace std;
 
+string password()
+{
+    int ch;
 
-
-string password (){
-int ch;
-
- string pass;
- ch=getch();
-    while(ch != 13){
+    string pass;
+    ch = getch();
+    while (ch != 13)
+    {
         pass.push_back(ch);
-        cout<< '*';
-        ch=getch();
+        cout << '*';
+        ch = getch();
     }
-return pass;
+    return pass;
 }
-
-
-
-
 
 class hotel
 {
 private:
-    int quant, choise, day;
-    // string spass = "154@faf";
-    //  choises
-    int rchoise;
+    int quant, choice, day;
+    //  choices
+    int rchoice;
     // quantity of hotel item
     int qroom = 10, droom = 200, sroom = 500, qbread = 1000, qmilk = 5000, qroast = 4000, qbeef = 1000;
     // sell quantity of hotel item
     int sbread = 0, smilk = 0, sroast = 0, sbeef = 0, sqroom = 0, sdroom = 0, ssroom = 0;
     // price of hotel sold item
-    int total_qroom = 0, total_droom = 0, total_sroom = 0, total_food = 0, total_bread = 0, total_milk = 0, total_roast = 0, total_beef = 0;
+    int total_qroom = 0, total_droom = 0, total_sroom = 0, total_bread = 0, total_milk = 0, total_roast = 0, total_beef = 0;
     // quant of user
     int qquant = 0, dquant = 0, squant = 0, bquant = 0, mquant = 0, rquant = 0, bequant = 0;
 
 public:
     string name;
     string pass;
-    int userChoise;
+    int userchoice;
+    void foodchoice()
+    {
+        if (choice == 1)
+        {
+            cout << "\n\t\tHow much bread do you want sir? ";
+            cin >> bquant;
+            if (qbread - sbread >= bquant)
+            {
+                sbread = sbread + bquant;
+                total_bread = (total_bread + bquant * 200);
+                cout << "\n\t\t" << bquant << " bread ordered.";
+            }
+            else
+            {
+                cout << "\n\t\tOnly " << qbread - sbread << " we have.\n";
+            }
+        }
+        if (choice == 2)
+        {
+            cout << "\n\t\tHow much milk sake do you want sir? ";
+            cin >> mquant;
+            if (qmilk - smilk >= mquant)
+            {
+                smilk = smilk + mquant;
+                total_milk = (total_milk + mquant * 150);
+                cout << "\n\t\t" << mquant << " milk sake ordered.";
+            }
+            else
+            {
+                cout << "\n\t\tOnly " << qmilk - smilk << " we have.\n";
+            }
+        }
+        if (choice == 3)
+        {
+            cout << "\n\t\tHow much roast do you want sir? ";
+            cin >> rquant;
+            if (qroast - sroast >= rquant)
+            {
+                sroast = sroast + rquant;
+                total_roast = (total_roast + rquant * 250);
+                cout << "\n\t\t" << rquant << " roast ordered.";
+            }
+            else
+            {
+                cout << "\n\t\tOnly " << qroast - sroast << " we have.\n";
+            }
+        }
+        if (choice == 4)
+        {
+            cout << "\n\t\tHow much beef do you want sir? ";
+            cin >> bequant;
+            if (qbeef - sbeef >= bequant)
+            {
+                sbeef = sbeef + bequant;
+                total_beef = (total_beef + bequant * 300);
+                cout << "\n\t\t" << bequant << " beef ordered.";
+            }
+            else
+            {
+                cout << "\n\t\tOnly " << qbeef - sbeef << " we have.\n";
+            }
+        }
+        else
+        {
+            cout << "\n\t\tPlease select option from above.";
+        }
+    }
+
+    void roomchoice()
+    {
+        if (rchoice == 1)
+        {
+            cout << "\n\t\tHow Many Queen bed room do you want?\n\t\t";
+            cin >> qquant;
+            if ((qroom - sqroom) >= qquant)
+            {
+                cout << "\n\t\t How many days you want to check in?\n\t\t";
+                cin >> day;
+                sqroom = sqroom + qquant;
+                total_qroom = (total_qroom + qquant * 4000) * day;
+                cout << "\n\t\t" << qquant << " rooms have beed alloted.\n";
+                cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n\t\tYou can recive your recipt\n";
+            }
+            else
+            {
+                cout << "\n\t\tSorry sir we don't have much room.";
+            }
+        }
+        if (rchoice == 2)
+        {
+            cout << "\n\t\tHow Many Double bed room do you want?\n\t\t";
+            cin >> dquant;
+            if ((droom - sdroom) >= dquant)
+            {
+                cout << "\n\t\t How many days you want to check in?\n\t\t";
+                cin >> day;
+                sdroom = sdroom + dquant;
+                total_droom = (total_droom + dquant * 2000) * day;
+                cout << "\n\t\t" << dquant << " rooms have beed alloted.\n";
+                cout << "\n\t\tSir you have to pay " << total_droom << " for stay of " << day << " days.\n\t\tYou can pay for room or later\n";
+            }
+            else
+            {
+                cout << "\n\t\tSorry sir we don't have much room.";
+            }
+        }
+        if (rchoice == 3)
+        {
+            cout << "\n\t\tHow Many Single bed room do you want?\n\t\t";
+            cin >> squant;
+            if ((sroom - ssroom) >= squant)
+            {
+                cout << "\n\t\t How many days you want to check in?\n\t\t";
+                cin >> day;
+                ssroom = ssroom + squant;
+                total_sroom = (total_sroom + squant * 1000) * day;
+                cout << "\n\t\t" << squant << " rooms have beed alloted.\n";
+                cout << "\n\t\tSir you have to pay " << total_sroom << " for stay of " << day << " days.\n\t\tYou can pay for room or later\n";
+            }
+            else
+            {
+                cout << "\n\t\tSorry sir we don't have much room.";
+            }
+        }
+    }
+
+    void recipt()
+    {
+        if (total_qroom > 0)
+        {
+            cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n";
+            cout << "\t\tSir you have to allowed " << qquant << " queen bed room.\n";
+            cout << "\t\tPayment successful \n";
+        }
+        if (total_droom > 0)
+        {
+            cout << "\t\tSir you have to pay " << total_droom << " for stay of " << day << " days.\n";
+            cout << "\t\tSir you have to allowed " << dquant << " double bed room\n";
+            cout << "\t\tPayment successful \n";
+        }
+        if (total_sroom > 0)
+        {
+            cout << "\t\tSir you have to pay " << total_sroom << " for stay of " << day << " days.\n";
+            cout << "\t\tSir you have to allowed " << squant << " single bed room\n";
+            cout << "\t\tPayment successful \n";
+        }
+        if (total_bread > 0)
+        {
+            cout << "\t\tSir you have to pay " << total_bread << " for bread.\n";
+            cout << "\t\tSir you buy " << bquant << " bread \n";
+            cout << "\t\tPayment successful \n";
+        }
+        if (total_milk > 0)
+        {
+            cout << "\t\tSir you have to pay " << total_milk << " for milk.\n";
+            cout << "\t\tSir you buy " << mquant << " ml milk\n";
+            cout << "\t\tPayment successful \n";
+        }
+        if (total_roast > 0)
+        {
+            cout << "\t\tSir you have to pay " << total_roast << " for roast.\n";
+            cout << "\t\tSir you buy " << rquant << " roast \n";
+            cout << "\t\tPayment successful \n";
+        }
+        if (total_beef > 0)
+        {
+            cout << "\t\tSir you have to pay " << total_beef << " for beef \n";
+            cout << "\t\tSir you buy " << bequant << " beef \n";
+            cout << "\t\tPayment successful \n";
+        }
+
+        cout << "\n\t\tExit to Main Menu\n Press 0;";
+        cin >> choice;
+        system("cls");
+    }
+
     hotel();
-    void recipt();
     ~hotel();
 };
 
@@ -53,19 +223,19 @@ hotel::hotel()
 
     system("cls");
 login:
-    std::cout << "\n\t\t\tWelcome to hotel Morning Star!!!!\n\n";
-    std::cout << "\t\t 1.Login\n";
-    std::cout << "\t\t 2.Registration\n";
-    std::cout << "\t\t 3.Availability (Private)\n";
-    std::cout << "\t\t 4.Quit\n";
-    std::cin >> userChoise;
+    cout << "\n\t\t\tWelcome to hotel Morning Star!!!!\n\n";
+    cout << "\t\t 1.Login\n";
+    cout << "\t\t 2.Registration\n";
+    cout << "\t\t 3.Availability (Private)\n";
+    cout << "\t\t 4.Quit\n";
+    cin >> userchoice;
 
-    if (userChoise == 2)
+    if (userchoice == 2)
     {
-        std::cout << "\t\tEnter your username:\t";
-        std::cin >> name;
-        std::cout << "\t\tSet-up your pass:\t";
-         pass=password();
+        cout << "\t\tEnter your username:\t";
+        cin >> name;
+        cout << "\t\tSet-up your pass:\t";
+        pass = password();
         fstream myFile;
         myFile.open("user-information", ios::app);
 
@@ -81,13 +251,13 @@ login:
         goto login;
     }
 
-    if (userChoise == 1)
+    if (userchoice == 1)
     {
         string id, user;
-        std::cout << "\t\tEnter your username:\t";
-        std::cin >> name;
-        std::cout << "\t\tEnter your password:\t";
-        pass=password();
+        cout << "\t\tEnter your username:\t";
+        cin >> name;
+        cout << "\t\tEnter your password:\t";
+        pass = password();
         ifstream myFile("user-information.txt");
         int ok;
         while (myFile >> user >> id)
@@ -101,8 +271,8 @@ login:
             else
             {
                 system("cls");
-                std::cout << "\t\t______________________________________________________________________\n\n";
-                std::cout << "\t\t___________________________Wrong pass or name. Try again!!!______________\n\n";
+                cout << "\t\t______________________________________________________________________\n\n";
+                cout << "\t\t___________________________Wrong pass or name. Try again!!!______________\n\n";
             }
         }
 
@@ -110,78 +280,24 @@ login:
         if (ok == 1)
         {
         m:
-            std::cout << "\n\n\n\t\t\t Please check out the Menu: \n";
-            std::cout << "\t\t1)Room\n";
-            std::cout << "\t\t2)Food\n";
-            std::cout << "\t\t3)Exit\n";
+            cout << "\n\n\n\t\t\t Please check out the Menu: \n";
+            cout << "\t\t1)Room\n";
+            cout << "\t\t2)Food\n";
+            cout << "\t\t3)Exit\n";
 
-            std::cout << "\n\t\tWhat do you want? ";
-            std::cin >> choise;
+            cout << "\n\t\tWhat do you want? ";
+            cin >> choice;
 
-            switch (choise)
+            switch (choice)
             {
             case 1:
-                std::cout << "\n\n\t\t What kind of room do you want? ";
-                std::cout << "\n\t\t1)Queen Bed";
-                std::cout << "\n\t\t2)Double Bed";
-                std::cout << "\n\t\t3)Single Bed\n\t\t";
-                std::cin >> rchoise;
-                if (rchoise == 1)
-                {
-                    std::cout << "\n\t\tHow Many Queen bed room do you want?\n\t\t";
-                    std::cin >> qquant;
-                    if ((qroom - sqroom) >= qquant)
-                    {
-                        std::cout << "\n\t\t How many days you want to check in?\n\t\t";
-                        std::cin >> day;
-                        sqroom = sqroom + qquant;
-                        total_qroom = (total_qroom + qquant * 4000) * day;
-                        std::cout << "\n\t\t" << qquant << " rooms have beed alloted.\n";
-                        std::cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n\t\tYou can recive your recipt\n";
-                    }
-                    else
-                    {
-                        std::cout << "\n\t\tSorry sir we don't have much room.";
-                    }
-                }
-                if (rchoise == 2)
-                {
-                    std::cout << "\n\t\tHow Many Double bed room do you want?\n\t\t";
-                    std::cin >> dquant;
-                    if ((droom - sdroom) >= dquant)
-                    {
-                        std::cout << "\n\t\t How many days you want to check in?\n\t\t";
-                        std::cin >> day;
-                        sdroom = sdroom + dquant;
-                        total_droom = (total_droom + dquant * 2000) * day;
-                        std::cout << "\n\t\t" << dquant << " rooms have beed alloted.\n";
-                        std::cout << "\n\t\tSir you have to pay " << total_droom << " for stay of " << day << " days.\n\t\tYou can pay for room or later\n";
-                    }
-                    else
-                    {
-                        std::cout << "\n\t\tSorry sir we don't have much room.";
-                    }
-                }
-                if (rchoise == 3)
-                {
-                    std::cout << "\n\t\tHow Many Single bed room do you want?\n\t\t";
-                    std::cin >> squant;
-                    if ((sroom - ssroom) >= squant)
-                    {
-                        std::cout << "\n\t\t How many days you want to check in?\n\t\t";
-                        std::cin >> day;
-                        ssroom = ssroom + squant;
-                        total_sroom = (total_sroom + dquant * 1000) * day;
-                        std::cout << "\n\t\t" << squant << " rooms have beed alloted.\n";
-                        std::cout << "\n\t\tSir you have to pay " << total_sroom << " for stay of " << day << " days.\n\t\tYou can pay for room or later\n";
-                    }
-                    else
-                    {
-                        std::cout << "\n\t\tSorry sir we don't have much room.";
-                    }
-                }
-
-                if (rchoise > 4)
+                cout << "\n\n\t\t What kind of room do you want? ";
+                cout << "\n\t\t1)Queen Bed";
+                cout << "\n\t\t2)Double Bed";
+                cout << "\n\t\t3)Single Bed\n\t\t";
+                cin >> rchoice;
+                roomchoice();
+                if (rchoice > 4)
                 {
                     system("cls");
                     goto m;
@@ -190,133 +306,25 @@ login:
 
             case 2:
 
-                std::cout << "\n\t\tHere is the menu of foods:\n";
-                std::cout << "\t\t1)bread\n";
-                std::cout << "\t\t2)milk\n";
-                std::cout << "\t\t3)roast\n";
-                std::cout << "\t\t4)beef\n";
+                cout << "\n\t\tHere is the menu of foods:\n";
+                cout << "\t\t1)bread\n";
+                cout << "\t\t2)milk\n";
+                cout << "\t\t3)roast\n";
+                cout << "\t\t4)beef\n";
 
-                std::cout << "\t\tWhat do you want? ";
-                std::cin >> choise;
+                cout << "\t\tWhat do you want? ";
+                cin >> choice;
 
-                if (choise == 1)
-                {
-                    std::cout << "\n\t\tHow much bread do you want sir? ";
-                    std::cin >> bquant;
-                    if (qbread - sbread >= bquant)
-                    {
-                        sbread = sbread + bquant;
-                        total_bread = (total_bread + bquant * 200);
-                        std::cout << "\n\t\t" << bquant << " bread ordered.";
-                    }
-                    else
-                    {
-                        std::cout << "\n\t\tOnly " << qbread - sbread << " we have.\n";
-                    }
-                }
-                if (choise == 2)
-                {
-                    std::cout << "\n\t\tHow much milk sake do you want sir? ";
-                    std::cin >> mquant;
-                    if (qmilk - smilk >= mquant)
-                    {
-                        smilk = smilk + mquant;
-                        total_milk = (total_milk + mquant * 150);
-                        std::cout << "\n\t\t" << mquant << " milk sake ordered.";
-                    }
-                    else
-                    {
-                        std::cout << "\n\t\tOnly " << qmilk - smilk << " we have.\n";
-                    }
-                }
-                if (choise == 3)
-                {
-                    std::cout << "\n\t\tHow much roast do you want sir? ";
-                    std::cin >> rquant;
-                    if (qroast - sroast >= rquant)
-                    {
-                        sroast = sroast + rquant;
-                        total_roast = (total_roast + rquant * 250);
-                        std::cout << "\n\t\t" << rquant << " roast ordered.";
-                    }
-                    else
-                    {
-                        std::cout << "\n\t\tOnly " << qroast - sroast << " we have.\n";
-                    }
-                }
-                if (choise == 4)
-                {
-                    std::cout << "\n\t\tHow much beef do you want sir? ";
-                    std::cin >> bequant;
-                    if (qbeef - sbeef >= bequant)
-                    {
-                        sbeef = sbeef + bequant;
-                        total_beef = (total_beef + bequant * 300);
-                        std::cout << "\n\t\t" << bequant << " beef ordered.";
-                    }
-                    else
-                    {
-                        std::cout << "\n\t\tOnly " << qbeef - sbeef << " we have.\n";
-                    }
-                }
-                else
-                {
-                    std::cout << "\n\t\tPlease select option from above.";
-                }
+                foodchoice();
+
                 break;
-
             case 3:
 
                 system("cls");
 
-                std::cout << "\n\n\t\t============Here is your Recipt===========" << endl;
-                if (total_qroom > 0)
-                {
-                    std::cout << "\n\t\tSir you have to pay " << total_qroom << " for stay of " << day << " days.\n";
-                    std::cout << "\t\tSir you have to allowed " << qquant << " queen bed room.\n";
-                    std::cout << "\t\tPayment successful \n";
-                }
-                if (total_droom > 0)
-                {
-                    std::cout << "\t\tSir you have to pay " << total_droom << " for stay of " << day << " days.\n";
-                    std::cout << "\t\tSir you have to allowed " << dquant << " double bed room\n";
-                    std::cout << "\t\tPayment successful \n";
-                }
-                if (total_sroom > 0)
-                {
-                    std::cout << "\t\tSir you have to pay " << total_sroom << " for stay of " << day << " days.\n";
-                    std::cout << "\t\tSir you have to allowed " << squant << " single bed room\n";
-                    std::cout << "\t\tPayment successful \n";
-                }
-                if (total_bread > 0)
-                {
-                    std::cout << "\t\tSir you have to pay " << total_bread << " for bread.\n";
-                    std::cout << "\t\tSir you buy " << bquant << " bread \n";
-                    std::cout << "\t\tPayment successful \n";
-                }
-                if (total_milk > 0)
-                {
-                    std::cout << "\t\tSir you have to pay " << total_milk << " for milk.\n";
-                    std::cout << "\t\tSir you buy " << mquant << " ml milk\n";
-                    std::cout << "\t\tPayment successful \n";
-                }
-                if (total_roast > 0)
-                {
-                    std::cout << "\t\tSir you have to pay " << total_roast << " for roast.\n";
-                    std::cout << "\t\tSir you buy " << rquant << " roast \n";
-                    std::cout << "\t\tPayment successful \n";
-                }
-                if (total_beef > 0)
-                {
-                    std::cout << "\t\tSir you have to pay " << total_beef << " for beef \n";
-                    std::cout << "\t\tSir you buy " << bequant << " beef \n";
-                    std::cout << "\t\tPayment successful \n";
-                }
-
-                std::cout << "\n\t\tExit to Main Menu\n Press 0;";
-                std::cin >> choise;
-                system("cls");
-                if (choise == 0)
+                cout << "\n\n\t\t============Here is your Recipt===========" << endl;
+                recipt();
+                if (choice == 0)
                 {
                     total_beef = 0;
                     total_bread = 0;
@@ -334,10 +342,11 @@ login:
                     squant = 0;
                     goto login;
                 }
+                
                 break;
 
             default:
-                std::cout << "\n\t\tPlease select option from above.\n\n";
+                cout << "\n\t\tPlease select option from above.\n\n";
                 system("cls");
             }
             goto m;
@@ -345,12 +354,12 @@ login:
         goto login;
     }
 
-    if (userChoise == 3)
+    if (userchoice == 3)
     {
         string id = "154@faf";
-        std::cout << "\t\t\tWelcome to hotel Morning star Admin panel\n\n";
-        std::cout << "\t\t\tPlease enter your password:\n";
-        std::cin >> pass;
+        cout << "\t\t\tWelcome to hotel Morning star Admin panel\n\n";
+        cout << "\t\t\tPlease enter your password:\n";
+        pass = password();
 
         int ok;
         if (id == pass)
@@ -359,47 +368,49 @@ login:
         }
         else
         {
-            std::cout << "\t\tWrong pass or name. Try again.\n";
+            system("cls");
+            cout << "\t\tWrong pass or name. Try again.\n";
+            goto login;
         }
 
         if (ok == 1)
         {
             system("cls");
         admin:
-            std::cout << "\t\t1)Information regrading sales and collection(Only for manager)\n";
-            std::cout << "\t\t2)Add hotel items quantity\n";
-            std::cout << "\t\t3)Back to login page\n";
-            std::cin >> choise;
+            cout << "\t\t1)Information regrading sales and collection(Only for manager)\n";
+            cout << "\t\t2)Add hotel items quantity\n";
+            cout << "\t\t3)Back to login page\n";
+            cin >> choice;
 
-            switch (choise)
+            switch (choice)
             {
             case 1:
-                std::cout << "\n\t\tDetails of sales and collections: ";
-                std::cout << "\n\t\t Rooms :";
-                std::cout << "\n Number Of Queen room we have: " << qroom - sqroom;
-                std::cout << "\n Number of Queen room sales: " << sqroom;
-                std::cout << "\n Total queen room collection according to guest staying: " << total_qroom;
-                std::cout << "\n Number of double room we have: " << droom - sdroom;
-                std::cout << "\n Number of double room sales: " << sdroom;
-                std::cout << "\n Total double room collection according to guest staying: " << total_droom;
-                std::cout << "\n Number of single room we have: " << sroom - ssroom;
-                std::cout << "\n Number of single room sales: " << ssroom;
-                std::cout << "\n Total single room collection according to guest staying: " << total_sroom;
+                cout << "\n\t\tDetails of sales and collections: ";
+                cout << "\n\t\t Rooms :";
+                cout << "\n Number Of Queen room we have: " << qroom - sqroom;
+                cout << "\n Number of Queen room sales: " << sqroom;
+                cout << "\n Total queen room collection according to guest staying: " << total_qroom;
+                cout << "\n Number of double room we have: " << droom - sdroom;
+                cout << "\n Number of double room sales: " << sdroom;
+                cout << "\n Total double room collection according to guest staying: " << total_droom;
+                cout << "\n Number of single room we have: " << sroom - ssroom;
+                cout << "\n Number of single room sales: " << ssroom;
+                cout << "\n Total single room collection according to guest staying: " << total_sroom;
 
-                std::cout << "\n\t\t Foods :";
-                std::cout << "\n Number Of bread we have: " << qbread - sbread;
-                std::cout << "\n Number of bread sales: " << sbread;
-                std::cout << "\n Total bread collection of par day: " << total_bread;
-                std::cout << "\n Number of Milk sake we have: " << qmilk - smilk;
-                std::cout << "\n Number of Milk sake sales: " << smilk;
-                std::cout << "\n Total milk collection of par day: " << total_milk;
-                std::cout << "\n Number of roast we have: " << qroast - sroast;
-                std::cout << "\n Number of roast sales: " << sroast;
-                std::cout << "\n Total roast collection of par day: " << total_roast;
-                std::cout << "\n Number of beef we have: " << qbeef - sbeef;
-                std::cout << "\n Number of beef sales: " << sbeef;
-                std::cout << "\n Total beef collection of par day: " << total_beef;
-                if (choise == 1)
+                cout << "\n\t\t Foods :";
+                cout << "\n Number Of bread we have: " << qbread - sbread;
+                cout << "\n Number of bread sales: " << sbread;
+                cout << "\n Total bread collection of par day: " << total_bread;
+                cout << "\n Number of Milk sake we have: " << qmilk - smilk;
+                cout << "\n Number of Milk sake sales: " << smilk;
+                cout << "\n Total milk collection of par day: " << total_milk;
+                cout << "\n Number of roast we have: " << qroast - sroast;
+                cout << "\n Number of roast sales: " << sroast;
+                cout << "\n Total roast collection of par day: " << total_roast;
+                cout << "\n Number of beef we have: " << qbeef - sbeef;
+                cout << "\n Number of beef sales: " << sbeef;
+                cout << "\n Total beef collection of par day: " << total_beef;
+                if (choice == 1)
                 {
 
                     fstream hotelSaleFile;
@@ -436,23 +447,23 @@ login:
                 }
                 break;
             case 2:
-                std::cout << "\n\t\t\tWelcome to hotel Morning Star!!!!\n\n";
-                std::cout << "\n\n\t\tPlease enter Queen room quantity: ";
-                std::cin >> qroom;
-                std::cout << "\n\n\t\tPlease enter Double room quantity: ";
-                std::cin >> droom;
-                std::cout << "\n\n\t\tPlease enter Single room quantity: ";
-                std::cin >> sroom;
-                std::cout << "\n\t\tPlease enter bread quantity: ";
-                std::cin >> qbread;
-                std::cout << "\n\t\tPlease enter milk quantity: ";
-                std::cin >> qmilk;
-                std::cout << "\n\t\tPlease enter roast quantity: ";
-                std::cin >> qroast;
-                std::cout << "\n\t\tPlease enter beef quantity: ";
-                std::cin >> qbeef;
+                cout << "\n\t\t\tWelcome to hotel Morning Star!!!!\n\n";
+                cout << "\n\n\t\tPlease enter Queen room quantity: ";
+                cin >> qroom;
+                cout << "\n\n\t\tPlease enter Double room quantity: ";
+                cin >> droom;
+                cout << "\n\n\t\tPlease enter Single room quantity: ";
+                cin >> sroom;
+                cout << "\n\t\tPlease enter bread quantity: ";
+                cin >> qbread;
+                cout << "\n\t\tPlease enter milk quantity: ";
+                cin >> qmilk;
+                cout << "\n\t\tPlease enter roast quantity: ";
+                cin >> qroast;
+                cout << "\n\t\tPlease enter beef quantity: ";
+                cin >> qbeef;
                 system("cls");
-                if (choise == 2)
+                if (choice == 2)
                 {
 
                     fstream hotelFile;
@@ -480,19 +491,19 @@ login:
 
             default:
                 system("cls");
-                std::cout << "\n\t\tPlease select option from above.\n\n";
+                cout << "\n\t\tPlease select option from above.\n\n";
             }
             goto admin;
         }
     }
-    if (userChoise == 4)
+    if (userchoice == 4)
     {
         exit(0);
     }
-    if (userChoise > 4)
+    if (userchoice > 4)
     {
         system("cls");
-        std::cout << "\t\t\tWrong choose!! if you want exit than press 4\n\n";
+        cout << "\t\t\tWrong choose!! if you want exit than press 4\n\n";
         goto login;
     }
 }
