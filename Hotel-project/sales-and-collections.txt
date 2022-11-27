@@ -1,1 +1,68 @@
 sales and collections
+ Rooms quantity:
+Number Of Queen room we have: 10
+Number of Queen room sales: 0
+Total queen room collection according to guest staying: 0
+ Number of double room we have: 200
+Number of double room sales: 0
+Total double room collection according to guest staying: 0
+Number of single room we have: 500
+ Number of single room sales: 0
+Total single room collection according to guest staying: 0
+Foods :
+Number Of bread we have: 1000
+Number of bread sales: 0
+Total bread collection of par day: 0
+Number of Milk sake we have: 5000
+Number of Milk sake sales: 0
+Total milk collection of par day: 0
+Total bread collection of par day: 0
+Number of Milk sake we have: 5000
+Number of roast we have: 4000
+Number of roast sales: 0
+Number of beef we have: 1000
+Number of beef sales: 0
+Total beef collection of par day: 0
+
+ Rooms quantity:
+Number Of Queen room we have: 50
+Number of Queen room sales: 0
+Total queen room collection according to guest staying: 0
+ Number of double room we have: 100
+Number of double room sales: 0
+Total double room collection according to guest staying: 0
+Number of single room we have: 100
+ Number of single room sales: 0
+Total single room collection according to guest staying: 0
+Foods :
+Number Of bread we have: 1000
+Number of bread sales: 0
+Total bread collection of par day: 0
+Number of Milk sake we have: 200
+Number of Milk sake sales: 0
+Total milk collection of par day: 0
+Total bread collection of par day: 0
+Number of Milk sake we have: 200
+Number of roast we have: 500
+Number of roast sales: 0
+Number of beef we have: 500
+Number of beef sales: 0
+Total beef collection of par day: 0
+
+ Rooms quantity:
+Number Of Queen room we have: 5
+Number of Queen room sales: 5
+ Number of double room we have: 200
+Number of double room sales: 0
+Number of single room we have: 500
+ Number of single room sales: 0
+Foods :
+Number Of bread we have: 1000
+Number of bread sales: 0
+Number of Milk sake we have: 4600
+Number of Milk sake sales: 400
+Number of Milk sake we have: 4600
+Number of roast we have: 4000
+Number of roast sales: 0
+Number of beef we have: 1000
+Number of beef sales: 0

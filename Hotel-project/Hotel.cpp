@@ -296,6 +296,7 @@ login:
         myFile.close();
         if (ok == 1)
         {
+            ok = 0;
         m:
             cout << "\n\n\n\t\t\t Please check out the Menu: \n";
             cout << "\t\t1)Room\n";
@@ -378,7 +379,7 @@ login:
         {
             system("cls");
         admin:
-            cout << "\t\t1)Information regrading sales and collection(Only for manager)\n";
+            cout << "\n\t\t1)Information regrading sales and collection(Only for manager)\n";
             cout << "\t\t2)Add hotel items quantity\n";
             cout << "\t\t3)Back to login page\n";
             cin >> choice;
@@ -390,27 +391,20 @@ login:
                 cout << "\n\t\t Rooms :";
                 cout << "\n Number Of Queen room we have: " << qroom - sqroom;
                 cout << "\n Number of Queen room sales: " << sqroom;
-                cout << "\n Total queen room collection according to guest staying: " << total_qroom;
                 cout << "\n Number of double room we have: " << droom - sdroom;
                 cout << "\n Number of double room sales: " << sdroom;
-                cout << "\n Total double room collection according to guest staying: " << total_droom;
                 cout << "\n Number of single room we have: " << sroom - ssroom;
                 cout << "\n Number of single room sales: " << ssroom;
-                cout << "\n Total single room collection according to guest staying: " << total_sroom;
 
                 cout << "\n\t\t Foods :";
                 cout << "\n Number Of bread we have: " << qbread - sbread;
                 cout << "\n Number of bread sales: " << sbread;
-                cout << "\n Total bread collection of par day: " << total_bread;
                 cout << "\n Number of Milk sake we have: " << qmilk - smilk;
                 cout << "\n Number of Milk sake sales: " << smilk;
-                cout << "\n Total milk collection of par day: " << total_milk;
                 cout << "\n Number of roast we have: " << qroast - sroast;
                 cout << "\n Number of roast sales: " << sroast;
-                cout << "\n Total roast collection of par day: " << total_roast;
                 cout << "\n Number of beef we have: " << qbeef - sbeef;
                 cout << "\n Number of beef sales: " << sbeef;
-                cout << "\n Total beef collection of par day: " << total_beef;
                 if (choice == 1)
                 {
 
@@ -422,27 +416,20 @@ login:
                         hotelSaleFile << "\n Rooms quantity:" << endl;
                         hotelSaleFile << "Number Of Queen room we have: " << qroom - sqroom << endl;
                         hotelSaleFile << "Number of Queen room sales: " << sqroom << endl;
-                        hotelSaleFile << "Total queen room collection according to guest staying: " << total_qroom << endl;
                         hotelSaleFile << " Number of double room we have: " << droom - sdroom << endl;
                         hotelSaleFile << "Number of double room sales: " << sdroom << endl;
-                        hotelSaleFile << "Total double room collection according to guest staying: " << total_droom << endl;
                         hotelSaleFile << "Number of single room we have: " << sroom - ssroom << endl;
                         hotelSaleFile << " Number of single room sales: " << ssroom << endl;
-                        hotelSaleFile << "Total single room collection according to guest staying: " << total_sroom << endl;
                         hotelSaleFile << "Foods :" << endl;
                         hotelSaleFile << "Number Of bread we have: " << qbread - sbread << endl;
                         hotelSaleFile << "Number of bread sales: " << sbread << endl;
-                        hotelSaleFile << "Total bread collection of par day: " << total_bread << endl;
                         hotelSaleFile << "Number of Milk sake we have: " << qmilk - smilk << endl;
                         hotelSaleFile << "Number of Milk sake sales: " << smilk << endl;
-                        hotelSaleFile << "Total milk collection of par day: " << total_milk << endl;
-                        hotelSaleFile << "Total bread collection of par day: " << total_bread << endl;
                         hotelSaleFile << "Number of Milk sake we have: " << qmilk - smilk << endl;
                         hotelSaleFile << "Number of roast we have: " << qroast - sroast << endl;
                         hotelSaleFile << "Number of roast sales: " << sroast << endl;
                         hotelSaleFile << "Number of beef we have: " << qbeef - sbeef << endl;
                         hotelSaleFile << "Number of beef sales: " << sbeef << endl;
-                        hotelSaleFile << "Total beef collection of par day: " << total_beef << endl;
                         hotelSaleFile.close();
                     }
                 }

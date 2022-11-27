@@ -14,3 +14,11 @@ bread quantity:20
 milk quantity:10
 roast quantity:20
 beef quantity:30
+
+Queen room quantity:50
+Double room quantity:100
+Single room quantity:100
+bread quantity:1000
+milk quantity:200
+roast quantity:500
+beef quantity:500
