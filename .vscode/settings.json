@@ -96,7 +96,12 @@
     "shared_mutex": "cpp",
     "thread": "cpp",
     "typeindex": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "bit": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "string_view": "cpp",
+    "numbers": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

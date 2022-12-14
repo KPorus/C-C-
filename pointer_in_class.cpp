@@ -31,8 +31,7 @@ int main()
     A ob;
     B o;
     // here base called derived class B function display
-    A *p;
-    p = &o;
+    A *p = new B;
     p->print();//called from a because print is not virtual function 
     p->display(); // printing Class b function case display is virtual function
     return 0;

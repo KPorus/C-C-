@@ -1,70 +1,111 @@
-#include <iostream>
-using namespace std;
-class fifa
-{
-private:
-    int Cups;
+#include<iostream>
 
-public:
-    fifa() : Cups(0){};
-    void setCups(int c)
-    {
-        Cups = c;
-    }
-    int getCups()
-    {
-        return Cups;
-    }
-};
-class germany : public fifa
+class A
 {
-public:
-    void display()
+    int x;
+    int y;
+
+    public:
+
+    A (){
+        std::cout<<"Enter the value of x and y:\n";
+        std::cin>>x>>y;
+    }
+
+    A operator ++(int)
     {
-        /*fifa *info[3];
-        info[0] = new fifa;
-        /*info[0]->*/setCups(2);
-        cout << "Germany: " << endl;
-        cout << "Cups: " << /*info[0]->*/getCups() << endl
-             << endl;
+        x++;
+        y++;
+        std::cout<<"Value of x: "<<x<<"\n";
+        std::cout<<"Value of y: "<<y<<"\n";
     }
 };
-class argentina : public fifa
-{
-public:
-    void display()
-    {
-        /*fifa *info[3];
-        info[1] = new fifa;
-        info[1]->*/setCups(10);
-        cout << "Argentina: " << endl;
-        cout << "Cups: " << /*info[1]->*/getCups() << endl
-             << endl;
-    }
-};
-class brazil : public fifa
-{
-public:
-    void display()
-    {
-        /*fifa *info[3];
-        info[2] = new fifa;
-        info[2]->*/setCups(4);
-        cout << "Brazil: " << endl;
-        cout << "Cups: " << /*info[2]->*/getCups() << endl
-             << endl;
-    }
-};
+
 int main()
 {
-    germany ob1;
-    argentina ob2;
-    brazil ob3;
-    ob1.display();
-    ob2.display();
-    ob3.display();
+    A ob;
+    ob++;
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+// class fifa
+// {
+// private:
+//     int Cups;
+
+// public:
+//     fifa() : Cups(0){};
+//     void setCups(int c)
+//     {
+//         Cups = c;
+//     }
+//     int getCups()
+//     {
+//         return Cups;
+//     }
+// };
+// class germany : public fifa
+// {
+// public:
+//     void display()
+//     {
+//         /*fifa *info[3];
+//         info[0] = new fifa;
+//         /*info[0]->*/setCups(2);
+//         cout << "Germany: " << endl;
+//         cout << "Cups: " << /*info[0]->*/getCups() << endl
+//              << endl;
+//     }
+// };
+// class argentina : public fifa
+// {
+// public:
+//     void display()
+//     {
+//         /*fifa *info[3];
+//         info[1] = new fifa;
+//         info[1]->*/setCups(10);
+//         cout << "Argentina: " << endl;
+//         cout << "Cups: " << /*info[1]->*/getCups() << endl
+//              << endl;
+//     }
+// };
+// class brazil : public fifa
+// {
+// public:
+//     void display()
+//     {
+//         /*fifa *info[3];
+//         info[2] = new fifa;
+//         info[2]->*/setCups(4);
+//         cout << "Brazil: " << endl;
+//         cout << "Cups: " << /*info[2]->*/getCups() << endl
+//              << endl;
+//     }
+// };
+// int main()
+// {
+//     germany ob1;
+//     argentina ob2;
+//     brazil ob3;
+//     ob1.display();
+//     ob2.display();
+//     ob3.display();
+//     return 0;
+// }
 
 // #include <iostream>
 // using namespace std;

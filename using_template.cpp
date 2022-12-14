@@ -44,5 +44,7 @@ int main()
     v2.arr[2] = f;
     double y = v1.multiplication(v2);
     std::cout<<"Result: "<<y;
+    delete[] v2.arr;
+    delete[] v1.arr;
     return 0;
 }
