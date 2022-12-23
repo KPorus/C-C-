@@ -1,43 +1,36 @@
-#include<iostream>
+#include <iostream>
 
 class A
 {
     int x;
     int y;
 
-    public:
-
-    A (){
-        std::cout<<"Enter the value of x and y:\n";
-        std::cin>>x>>y;
+public:
+    A()
+    {
+        std::cout << "Enter the value of x and y:\n";
+        std::cin >> x >> y;
     }
 
-    A operator ++(int)
+    A operator++(int)
     {
         x++;
         y++;
-        std::cout<<"Value of x: "<<x<<"\n";
-        std::cout<<"Value of y: "<<y<<"\n";
+        std::cout << "Value of x: " << x << "\n";
+        std::cout << "Value of y: " << y << "\n";
     }
 };
 
 int main()
 {
+#ifndef ONLINE_JUDGE
+    freopen("index.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     A ob;
     ob++;
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // #include <iostream>
 // using namespace std;
