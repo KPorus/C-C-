@@ -54,6 +54,8 @@ int main()
 
     Node *head = NULL;
     int k;
+    std::cout << "previous data: ";
+    display(head);
 m:
     std::cout << "if want to enter in head than press h or in tail t\n";
     std::string choose;
@@ -71,8 +73,10 @@ m:
             }
             insertAtTailValue(head, k);
         }
+        std::cout << "data list of adding data from tail: ";
+         display(head);
     }
-    else
+    else if(choose == "h")
     {
         for (int i = 0;; i++)
         {
@@ -85,6 +89,8 @@ m:
             }
             insertAtHeadValue(head, k);
         }
+        std::cout << "data list of adding data from head: ";
+         display(head);
     }
     std::cout << "All data: ";
     display(head);
