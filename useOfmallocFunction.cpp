@@ -7,6 +7,7 @@ int main()
     std::cout << "Enter the size ";
     std::cin >> n;
     int *ptr = (int *)malloc(n * sizeof(int));
+    int *qtr = (int *)malloc(n*sizeof(int));
 
     if (ptr == NULL)
     {
@@ -23,6 +24,17 @@ int main()
     for (i = 0; i < n; i++)
     {
         std::cout << *(ptr + i) <<"\n" ;
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        std::cout << "Enter a integer2:";
+        std::cin >> *(qtr + i);
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        std::cout <<"Result: " << *(ptr + i) + *(qtr + i) <<"\n" ;
     }
 
     return 0;
