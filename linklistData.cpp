@@ -47,13 +47,34 @@ int main()
 {
 
     Node * head = NULL;
-    insertValue(head,2);
-    insertValue(head,10);
-    insertValue(head,50);
-    insertValue(head,60);
-    insertValue(head,80);
-
-    display(head);
+    int k;
+    m:
+    for(int i = 0; ;i++)
+    {
+        std::cout<<"Enter a value: ";
+        std::cin>>k;
+        insertValue(head, k);
+        std::cout<<"want to finish to inserting data than press 0\n";
+        if(k==0)
+        {
+            break;
+        }
+    }
+        std::cout<< "All data: ";
+        display(head);
+    
+    std::cout<<"\nWant to add data than press 1\n want to exit program than press 0\n";
+    int input;
+    std::cout<<"Input a choose:";
+    std::cin>>input;
+    if(input)
+    {
+        goto m;
+    }
+    else
+    {
+        exit(0);
+    }
 
     return 0;
 }
