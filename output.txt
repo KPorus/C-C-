@@ -1,3 +1,0 @@
-Enter the value of x and y:
-Value of x: 1
-Value of y: 1

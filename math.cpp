@@ -6,6 +6,7 @@ private:
     int a,b;
     int sum = 0;
 public:
+
 int sum2 = 0;
 // use constractor overloading here
     math(); 

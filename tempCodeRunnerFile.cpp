@@ -1,5 +1,4 @@
- ManchesterUnited()
-    {
-        coach = 0;
-        player = 0;
-    }
+#ifndef ONLINE_JUDGE
+    freopen("index.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
