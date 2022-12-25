@@ -53,12 +53,12 @@ int main()
     {
         std::cout<<"Enter a value: ";
         std::cin>>k;
-        insertValue(head, k);
         std::cout<<"want to finish to inserting data than press 0\n";
         if(k==0)
         {
             break;
         }
+        insertValue(head, k);
     }
         std::cout<< "All data: ";
         display(head);
