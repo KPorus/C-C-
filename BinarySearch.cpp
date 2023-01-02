@@ -45,3 +45,7 @@ int main()
     
     return 0;
 }
+
+/*
+Time complexity of the binary search is big O of log n base 2
+*/
