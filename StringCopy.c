@@ -1,37 +1,17 @@
-#include<stdio.h>
-
-int length(char arr[])
-{
-    int i = 0;
-    int count = 0;
-    while (arr[i] != '\0')
-    {
-        if (arr[i] == ' ')
-        {
-        }
-        else
-        {
-            count++;
-        }
-        i++;
-    }
-    return count;
-}
+#include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
     char arr[100];
     gets(arr);
-    char arr1[]="pqr";
-    int len = length(arr1);
+    char arr1[] = "pqr";
     int i = 0;
     while (arr[i] != '\0')
     {
-        arr1[len] = arr[i];
-        len++;
+        arr1[i] = arr[i];
         i++;
     }
-    
-    printf("%s",arr1);
+    arr1[i] = '\0';
+    printf("%s", arr1);
     return 0;
 }
