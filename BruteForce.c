@@ -1,33 +1,38 @@
 #include <stdio.h>
-#include <string.h>
-
-void search(char *pat, char *txt)
-{
-    int M = strlen(pat);
-    int N = strlen(txt);
-
-    /* A loop to slide pat[] one by one */
-    for (int i = 0; i <= N - M; i++)
-    {
-        int j;
-
-        /* For current index i, check for pattern match */
-        for (j = 0; j < M; j++)
-            if (txt[i + j] != pat[j])
-                break;
-
-        if (j == M) // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
-            printf("Pattern found at index %d \n", i);
-    }
-}
-
-// Driver's code
 int main()
 {
-    char txt[] = "AABAACAADAABAAABAA";
-    char pat[] = "AABA";
+    int len = 0; // for pattern lenth
+    int i = 0;
+    int j = 0;
 
-    // Function call
-    search(pat, txt);
-    return 0;
+    char TEXT[] = "pattern matching algorithm "; // TEXT
+
+    char PATTERN[] = "match"; // pattern to match
+
+    while (PATTERN[len] != '\0')
+    {
+        len++;
+    }; // while loop to find pattern lenth
+
+    while (TEXT[i] != '\0')
+    { // while loop to check all the index
+
+        while (TEXT[i] == PATTERN[j])
+        { // while text and pattern index match loop will continue;
+            i++;
+            j++; // j++ is for measure how many index is correct ;
+
+            if (j == len)
+            { // if the j's value matched the len value then all the index match to the TEXT
+                printf("pattern matched at index %d", i);
+
+                return 0; // for getting executing the program
+            }
+        }
+
+        i++;
+        j = 0; // if index don't match continue to next index
+    }
+
+    printf("PATTERNT DOSENT MATCH TO YOUR TEXT");
 }
