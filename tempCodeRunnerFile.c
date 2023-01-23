@@ -1,1 +1,1 @@
-scanf("%s",arr);
+printf("Succes");
