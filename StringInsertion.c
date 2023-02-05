@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int length(char arr[])
 {
     int i = 0;
@@ -16,36 +17,22 @@ int length(char arr[])
     }
     return count;
 }
-int main(int argc, char const *argv[])
+int main()
 {
-    int len = 10;
-    char str[len];
-    gets(str);
-    char str1[] = "is";
-     len = length(str);
-    printf("%d\n", len);
-    int i = 0, j;
-    int x = 0;
-    printf("Enter a index number to enter a str1");
-    scanf("%d", &j);
-    for (i = len - 1; i >= j; i--)
+    char str1[20] = "fardin is back";
+    char str2[20] = "anika";
+    int index = 11;
+    int i, j;
+
+    for (j = 0; str2[j] != '\0'; j++)
     {
-        str[i + 1] = str[i];
+        for (i = length(str1); i >= index; i--)
+            str1[i + 1] = str1[i];
+        str1[index] = str2[j];
+        index++;
     }
-    while (str1[x] !='\0')
-    {
-        str[j] = str1[x];
-        j++;
-        x++;
-    }
-    len++;
-    printf("Array is - \n");
-    i = 0;
-    while (str[i] != '\0')
-    {
-        printf("%c", str[i]);
-        i++;
-    }
+
+    printf("Result: %s\n", str1);
 
     return 0;
 }
