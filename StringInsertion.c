@@ -21,13 +21,13 @@ int main()
 {
     char str1[20] = "fardin is back";
     char str2[20] = "anika";
-    int index = 11;
+    int index = 14;
     int i, j;
 
     for (j = 0; str2[j] != '\0'; j++)
     {
-        for (i = length(str1); i >= index; i--)
-            str1[i + 1] = str1[i];
+        for (i = length(str1); i >= index; i--){
+            str1[i + 1] = str1[i];}
         str1[index] = str2[j];
         index++;
     }
