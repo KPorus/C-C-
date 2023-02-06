@@ -1,3 +1,4 @@
+// not complete yet ===========
 #include<iostream>
 
 int main()
@@ -13,7 +14,7 @@ int main()
         std::cout<<"Enter your number: ";
         std::cin>>arr[i];
     }
-    std::cout<<"What do want to with those number (if sum than press 1\n if add then 2\n if multipilication then 3\n)\n";
+    std::cout<<"What do want to with those number (\nif sum than press 1\n if add then 2\n if multipilication then 3\n)\n";
     std::cin>>con;
 
     if(con==1){
@@ -31,15 +32,15 @@ int main()
         }
         std::cout<<"add of numbers: "<<sum;
     }
-    // else if(con==3)
-    // {
-    //     for(int j=0;j<n;j++)
-    //     {
-    //         sum=1;
-    //         sum*=arr[j];
-    //     }
-    //     std::cout<<"add of numbers: "<<sum;
-    // }
+    else if(con==3)
+    {
+        for(int j=0;j<n;j++)
+        {
+            sum=0;
+            sum=arr[j]/arr[j+1];
+        }
+        std::cout<<"multipilications of numbers: "<<sum;
+    }
 
     return 0;
 }
