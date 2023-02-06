@@ -1,12 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+int length(char arr[])
+{
+    int i = 0;
+    int count = 0;
+    while (arr[i] != '\0')
+    {
+        i++;
+        count++;
+    }
+    return count;
+}
+
 int main(int argc, char const *argv[])
 {
     char str[] = "fardin is back";
-    char str1[] = "is";
+    char str1[] = "far";
     int i = 0, x = 0, j;
-    int k, temp;
-    char str2[] = "ki";
+    int k = 0, temp;
+    char str2[] = "anika";
     while (str[i] != '\0')
     {
         j = 0;
@@ -23,17 +35,17 @@ int main(int argc, char const *argv[])
             if (str1[j] == '\0')
             {
                 printf("The substring is present in given string at position \n %d to %d\n", k, i);
-                while (str2[x] != '\0')
+
+                for (j = 0; str2[j] != '\0'; j++)
                 {
-                    str[k] = str2[x];
+                    for (h = length(str); h >= i; h--)
+                    {
+                        str[h + 1] = str[h];
+                    }
+                    str[k] = str2[j];
                     k++;
-                    x++;
                 }
-                // for(h=k;h<i;h++)
-                // {
-                //     str[k]=str2[h];
-                //     k++;
-                // }
+                    
                 goto m;
             }
             else
@@ -47,6 +59,7 @@ int main(int argc, char const *argv[])
     if (temp == 0)
     {
         printf("The substring is not present");
+        return 0;
     }
 
 m:
