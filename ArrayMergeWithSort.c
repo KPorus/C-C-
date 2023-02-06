@@ -1,12 +1,42 @@
 #include <stdio.h>
-
+int i = 0, j = 0, k = 0;
+void sort(int arr[], int size)
+{
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr[j] < arr[i])
+            {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
 int main()
 {
-    int arr1[5] = {1, 50, 60, 70, 80};
-    int arr2[10] = {12, 14, 15, 20, 20, 40, 60, 80, 85, 100};
-    int arr3[20];
+    int arr1[] = {10, 1, 0, 70, 80};
+    int arr2[] = {12, 20, 15, 14, 20, 40, 80, 60, 85, 100};
+    int size = sizeof(arr1) / sizeof(arr1[0]);
+    int size2 = sizeof(arr2) / sizeof(arr2[0]);
+    int arr3[size + size2];
+    sort(arr1, size);
+    sort(arr2, size2);
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr1[j] < arr1[i])
+            {
+                int temp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+            }
+        }
+    }
 
-    int i = 0, j = 0, k = 0;
     while (k < 15)
     {
 
