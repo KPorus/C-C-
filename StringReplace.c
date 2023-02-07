@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include<stdlib.h>
 #include <string.h>
 
-void replace(char *str, char *old, char *new)
+    void
+    replace(char *str, char *old, char *new)
 {
     int i, j, k;
     int str_len = strlen(str);
@@ -25,13 +27,20 @@ void replace(char *str, char *old, char *new)
         }
     }
 
+    if(count == 0)
+    {
+        printf("Pattern not found");
+        exit(0);
+    }
+    // this part can run if count != 0
     // Calculate the new length of the string
     int new_str_len = str_len + count * (new_len - old_len);
     char new_str[new_str_len];
 
-    // Replace the old pattern with the new pattern
+    // Replace the old pattern with the new pattern 
     for (i = 0, j = 0; i < str_len; i++)
     {
+        // finding the pattern in main string
         for (k = 0; k < old_len; k++)
         {
             if (str[i + k] != old[k])
@@ -39,6 +48,7 @@ void replace(char *str, char *old, char *new)
                 break;
             }
         }
+        // If pattern found then new pattern replace old pattern
         if (k == old_len)
         {
             for (k = 0; k < new_len; k++)
@@ -47,6 +57,7 @@ void replace(char *str, char *old, char *new)
             }
             i += old_len - 1;
         }
+        // if pattern not found in those index, main string will be copy to new string up until pattern found
         else
         {
             new_str[j++] = str[i];
@@ -65,10 +76,10 @@ void replace(char *str, char *old, char *new)
 int main(void)
 {
     char str[] = "Fardin kahn is back. Mr kahn is 22 year old. He is a MERN Stack developer.";
-    char old[] = "kahn";
+    char old[] = "front";
     char new[] = "khan";
 
-    printf("before update: ");
+    printf("Old Main String: ");
     printf("%s\n", str);
     replace(str, old, new);
     printf("After update: ");
