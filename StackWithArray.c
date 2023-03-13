@@ -3,9 +3,7 @@ int main(int argc, char const *argv[])
 {
     int i = 0;
     int top = i - 1;
-    char str[20] = "))((";
-    int count = 0;
-    int count1 = 0;
+    char str[20] = "(2+(3*2)+8)";
     char str2[20];
     while (str[i] != '\0')
     {
@@ -13,24 +11,29 @@ int main(int argc, char const *argv[])
         {
             top = top + 1;
             str2[top] = '(';
-            count++;
         }
-
-        if (str[i] == ')' && str2[top] == '(')
+        if(str[i] == ')')
         {
-            top = top - 1;
-            count1++;
+            if (top >= -1 && str2[top] != '(')
+            {
+                top++;
+                str2[top] = ')';
+            }
+            if (top >= 0 && str2[top] == '(')
+            {
+                top = top - 1;
+            }
         }
         i++;
     }
 
-    if (count1 + count < i)
-    {
-        printf("fail\n");
-    }
-    else if (top == -1)
+    if (top == -1)
     {
         printf("succes\n");
+    }
+    else
+    {
+        printf("fail\n");
     }
 
     return 0;
