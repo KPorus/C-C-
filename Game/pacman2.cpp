@@ -102,7 +102,6 @@ int main(int argc, char *argv[])
             {
                 int i = py - 1;
                 arr[i][px] = " ";
-                count++;
             }
         }
         if (ch == 'd')
@@ -116,7 +115,6 @@ int main(int argc, char *argv[])
             {
                 int i = px - 1;
                 arr[py][i] = " ";
-                count++;
             }
         }
         if (ch == 'w')
@@ -130,7 +128,6 @@ int main(int argc, char *argv[])
             {
                 int i = py + 1;
                 arr[i][px] = " ";
-                count++;
             }
         }
         if (ch == 'a')
@@ -144,10 +141,13 @@ int main(int argc, char *argv[])
             {
                 int i = px + 1;
                 arr[py][i] = " ";
-                count++;
             }
         }
 
+        if (arr[py][px] == ".")
+        {
+            count++;
+        }
         if (arr[py][px] == "O")
         {
             system("CLS");
@@ -163,6 +163,16 @@ int main(int argc, char *argv[])
             system("COLOR 06");
             cout << "\n\n\t\t\t************ Game Over ************\n\n";
             cout << "\n\n\t\t\t************ Your Score: " << count << " ************\n\n";
+            break;
+        }
+
+        if (count == 119)
+        {
+            system("CLS");
+            system("COLOR 06");
+            cout << "\n\n\t\t\t************ Congratulation!! You Win!! You are the best!!! ************\n\n";
+            cout << "\n\n\t\t\t************ Your Score: " << count << "************\n\n";
+            cout << "\n\n\t\t\t************ Game End ************\n\n";
             break;
         }
         system("CLS");
