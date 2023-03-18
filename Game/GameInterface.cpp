@@ -3,6 +3,9 @@
 #include <conio.h>
 #include <string>
 using namespace std;
+string arr[15][15];
+int x, y;
+int py = 1, px = 1;
 string name;
 int choice;
 
@@ -14,12 +17,8 @@ void gameList()
     cout << "\n\t\t\t\tEnter Your Choice: ";
     cin >> choice;
 }
-
-void packman()
+void playField()
 {
-    string arr[15][15];
-    int x, y;
-    int py = 1, px = 1;
     // design the play field
     for (int x = 0; x < 15; x++)
     {
@@ -92,16 +91,21 @@ void packman()
         }
         cout << "\n";
     }
+}
 
+void packman()
+{
+    playField() ;
+   
     int count = 0;
-    char ch ;
+    char ch;
     while (true)
     {
         cout << "\n\t\t\tIf you want to exit the game than press q ";
         cout << "\n\t\t\tYour Score: " << count << "\n";
         cout << "\n\t\t\tEnter your move: ";
         cin >> ch;
-        if(ch == 'q')
+        if (ch == 'q')
         {
             system("cls");
             gameList();
@@ -187,7 +191,7 @@ void packman()
             cout << "\n\n\t\t\t************ Game End ************\n\n";
             break;
         }
-        system("CLS");
+        system("cls");
         arr[py][px] = "@";
         for (int x = 0; x < 15; x++)
         {
@@ -200,7 +204,6 @@ void packman()
         }
     }
 }
-
 
 int main()
 {
