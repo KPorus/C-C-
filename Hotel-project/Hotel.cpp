@@ -46,9 +46,21 @@ void playField()
             {
                 arr[x][y] = "#";
             }
+            else if (x == 2 && y > 1 && y < 5)
+            {
+                arr[x][y] = "#";
+            }
+            else if (x == 1 && y > 5 && y < 10)
+            {
+                arr[x][y] = "#";
+            }
+            else if (y == 11 && x > 2 && x < 5)
+            {
+                arr[x][y] = "#";
+            }
             else
             {
-                arr[11][12] = "0";
+                arr[11][12] = "O";
                 arr[x][y] = ".";
             }
         }
