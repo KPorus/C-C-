@@ -46,8 +46,21 @@ void playField()
             {
                 arr[x][y] = "#";
             }
+            else if (x == 2 && y > 1 && y < 5)
+            {
+                arr[x][y] = "#";
+            }
+            else if (x == 1 && y > 5 && y < 10)
+            {
+                arr[x][y] = "#";
+            }
+            else if (y == 11 && x > 2 && x < 5)
+            {
+                arr[x][y] = "#";
+            }
             else
             {
+                arr[11][12] = "O";
                 arr[x][y] = ".";
             }
         }
@@ -76,10 +89,10 @@ int main(int argc, char *argv[])
         if (ch == 's')
         {
             py += 1;
-            if (py == 14)
-            {
-                py -= 1;
-            }
+            // if (py == 14)
+            // {
+            //     py -= 1;
+            // }
             if (py > 0)
             {
                 int i = py - 1;
@@ -89,10 +102,10 @@ int main(int argc, char *argv[])
         if (ch == 'd')
         {
             px += 1;
-            if (px == 14)
-            {
-                px -= 1;
-            }
+            // if (px == 14)
+            // {
+            //     px -= 1;
+            // }
             if (px > 0)
             {
                 int i = px - 1;
@@ -102,10 +115,10 @@ int main(int argc, char *argv[])
         if (ch == 'w')
         {
             py -= 1;
-            if (py == 0)
-            {
-                py += 1;
-            }
+            // if (py == 0)
+            // {
+            //     py += 1;
+            // }
             if (py > 0)
             {
                 int i = py + 1;
@@ -115,15 +128,31 @@ int main(int argc, char *argv[])
         if (ch == 'a')
         {
             px -= 1;
-            if (px == 0)
-            {
-                px += 1;
-            }
+            // if (px == 0)
+            // {
+            //     px += 1;
+            // }
             if (px > 0)
             {
                 int i = px + 1;
                 arr[py][i] = " ";
             }
+        }
+
+        if (arr[py][px] == "$")
+        {
+            system("CLS");
+            system("COLOR 06");
+            cout << "\n\n\t\t\t************Game End************\n\n";
+            break;
+        }
+
+        if (arr[py][px] == "#")
+        {
+            system("CLS");
+            system("COLOR 06");
+            cout << "\n\n\t\t\t************Game Over************\n\n";
+            break;
         }
         system("CLS");
         arr[py][px] = "@";
