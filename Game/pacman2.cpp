@@ -61,6 +61,9 @@ void playField()
             else
             {
                 arr[11][12] = "O";
+                arr[4][7] = "O";
+                arr[1][9] = "O";
+                arr[5][1] = "O";
                 arr[x][y] = ".";
             }
         }
@@ -79,11 +82,13 @@ void playField()
 int main(int argc, char *argv[])
 {
     char ch;
+    int count = 0;
 
     playField();
 
     while (true)
     {
+        cout << "\t\t\tYour Score: " << count << "\n";
         cout << "\nEnter your move: ";
         cin >> ch;
         if (ch == 's')
@@ -97,6 +102,7 @@ int main(int argc, char *argv[])
             {
                 int i = py - 1;
                 arr[i][px] = " ";
+                count++;
             }
         }
         if (ch == 'd')
@@ -110,6 +116,7 @@ int main(int argc, char *argv[])
             {
                 int i = px - 1;
                 arr[py][i] = " ";
+                count++;
             }
         }
         if (ch == 'w')
@@ -123,6 +130,7 @@ int main(int argc, char *argv[])
             {
                 int i = py + 1;
                 arr[i][px] = " ";
+                count++;
             }
         }
         if (ch == 'a')
@@ -136,14 +144,16 @@ int main(int argc, char *argv[])
             {
                 int i = px + 1;
                 arr[py][i] = " ";
+                count++;
             }
         }
 
-        if (arr[py][px] == "$")
+        if (arr[py][px] == "O")
         {
             system("CLS");
             system("COLOR 06");
-            cout << "\n\n\t\t\t************Game End************\n\n";
+            cout << "\n\n\t\t\t************ Game End ************\n\n";
+            cout << "\n\n\t\t\t************ Your Score: " << count << "************\n\n";
             break;
         }
 
@@ -151,7 +161,8 @@ int main(int argc, char *argv[])
         {
             system("CLS");
             system("COLOR 06");
-            cout << "\n\n\t\t\t************Game Over************\n\n";
+            cout << "\n\n\t\t\t************ Game Over ************\n\n";
+            cout << "\n\n\t\t\t************ Your Score: " << count << " ************\n\n";
             break;
         }
         system("CLS");
