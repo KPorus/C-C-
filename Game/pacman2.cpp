@@ -70,8 +70,11 @@ void playField()
     }
     // display the play field
     arr[py][px] = "@";
+    system("COLOR 06");
+    cout << "\n\n\t\t\tWelcome to the Game\n\n";
     for (int x = 0; x < 15; x++)
     {
+        cout << "\t\t\t";
         for (int y = 0; y < 15; y++)
         {
             cout << arr[x][y] << " ";
@@ -88,8 +91,8 @@ int main(int argc, char *argv[])
 
     while (true)
     {
-        cout << "\t\t\tYour Score: " << count << "\n";
-        cout << "\nEnter your move: ";
+        cout << "\n\t\t\tYour Score: " << count << "\n";
+        cout << "\n\t\t\tEnter your move: ";
         cin >> ch;
         if (ch == 's')
         {
@@ -179,6 +182,7 @@ int main(int argc, char *argv[])
         arr[py][px] = "@";
         for (int x = 0; x < 15; x++)
         {
+            cout << "\t\t\t";
             for (int y = 0; y < 15; y++)
             {
                 cout << arr[x][y] << " ";
