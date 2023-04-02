@@ -178,7 +178,7 @@ int main(int argc, char *argv[])
             cout << "\n\n\t\t\t************ Game End ************\n\n";
             break;
         }
-        system("CLS");
+        system("cls");
         arr[py][px] = "@";
         for (int x = 0; x < 15; x++)
         {

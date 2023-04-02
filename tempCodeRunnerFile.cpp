@@ -1,1 +1,1 @@
-m:
+cout<<node->data<<endl;

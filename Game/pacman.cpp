@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<conio.h>
 #include<dos.h>
-#define H 20
-#define W 40
+#define H 50
+#define W 60
 char playfield[H][W] = {
     {"****************************************"},
     {"* .....................................*"},
@@ -141,7 +141,7 @@ void setup()
 void draw_playfield()
 {
     int i, j;
-    textcolor(YELLOW);
+   system("COLOR 0");
     printf("\n\n\n\n");
     for (i = 0; i < H; i++)
     {
@@ -154,23 +154,26 @@ void draw_playfield()
     }
     printf("Score is %d ", food_collect);
 }
-int main()
+ void mainGame()
 {
     int i = 100;
     while (game_end != 1)
     {
-        sound(i);
+        system("cls");
         setup();
         user_input();
         move_ghosts();
         draw_playfield();
-        delay(200);
         if (i < 1000)
             i = i + 100;
         else
             i = 100;
     }
-    nosound();
     game_result();
     getch();
+}
+
+int main()
+{
+    mainGame();
 }
