@@ -3,21 +3,21 @@
 #include <math.h>
 using namespace std;
 
-int prefixEvaluation(string s)
+int postfixEvaluation(string s)
 {
     stack<int> value;
 
-    for (int i = s.length()-1; i >= 0; i--)
+    for (int i = 0; i < s.length() ; i++)
     {
-        if(s[i] >= '0' &&  s[i] <= '9')
+        if (s[i] >= '0' && s[i] <= '9')
         {
             value.push(s[i] - '0');
         }
         else
         {
-            int x = value.top();
-            value.pop();
             int y = value.top();
+            value.pop();
+            int x = value.top();
             value.pop();
 
             switch (s[i])
@@ -45,8 +45,8 @@ int prefixEvaluation(string s)
     return value.top();
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-    cout << prefixEvaluation("-+7*45+20")<<endl;
+    cout << postfixEvaluation("46+2/5*7+") << endl;
     return 0;
 }
