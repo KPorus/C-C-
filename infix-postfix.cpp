@@ -1,3 +1,4 @@
+/* error occurred during testing */
 #include<iostream>
 #include<stack>
 using namespace std;
@@ -75,6 +76,6 @@ string infixToPrefix(string s)
 
 int main(int argc, char const *argv[])
 {
-    cout << infixToPrefix("(a+b)*(c/d)") << endl;
+    cout << infixToPrefix("a+(b*c-(d/e^f)*g)*h") << endl;
     return 0;
 }
