@@ -30,6 +30,23 @@ Node* insertBST(Node *node, int val)
     return node;
 }
 
+Node* seacrhInBST(Node *node, int val)
+{
+    if (node == NULL)
+    {
+        return NULL;
+    }
+    else if (val == node->data)
+    {
+        return node;
+    }
+    else if (val < node->data)
+    {
+        return seacrhInBST(node->left, val);
+    }
+    return seacrhInBST(node->right, val);
+}
+
 void printBST(Node *node)
 {
     if (node == NULL)
@@ -55,6 +72,14 @@ int main()
 
     printBST(node);
     cout << endl;
+
+    if(seacrhInBST(node, 10) == NULL)
+    {
+        cout <<"Value not in tree"<<endl;
+    }
+    else{
+        cout<<"value exists in tree"<<endl;
+    }
     // struct Node *root = new Node(1);
     // root-> left = new Node(2);
     // root-> right = new Node(3);

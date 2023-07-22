@@ -7,10 +7,13 @@ int length(char arr[])
     int count = 0;
     while (arr[i] != '\0')
     {
-        if (arr[i] == ' ' & arr[i+1] != ' ')
+        if (arr[i] == ' ' || arr[i+1] == ' ')
         {
+        }
+        else{
             count++;
         }
+            
         i++;
     }
     return count;

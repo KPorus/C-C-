@@ -1,52 +1,55 @@
 #include <iostream>
-#include <stack>
-#include <math.h>
 using namespace std;
 
-int prefixEvaluation(string s)
+void merge(int arr[], int l, int mid, int r)
 {
-    stack<int> value;
-
-    for (int i = s.length()-1; i >= 0; i--)
+    int b[r - l + 1];
+    int l1 = l, l2 = mid + 1, i = 0;
+    while (l1 <= mid && l2 <= r)
     {
-        if(s[i] >= '0' &&  s[i] <= '9')
-        {
-            value.push(s[i] - '0');
-        }
+        if (arr[l1] <= arr[l2])
+            b[i++] = arr[l1++];
         else
-        {
-            int x = value.top();
-            value.pop();
-            int y = value.top();
-            value.pop();
-
-            switch (s[i])
-            {
-            case '+':
-                value.push(x + y);
-                break;
-            case '-':
-                value.push(x - y);
-                break;
-            case '*':
-                value.push(x * y);
-                break;
-            case '/':
-                value.push(x / y);
-                break;
-            case '^':
-                value.push(pow(x, y));
-                break;
-            default:
-                break;
-            }
-        }
+            b[i++] = arr[l2++];
+    } 
+    while (l1 <= mid)
+    {
+        b[i++] = arr[l1++];
     }
-    return value.top();
+
+    while (l2 <= r)
+    {
+        b[i++] = arr[l2++];
+    }
+
+    int j = 0;
+    for (i = l; i <= r; i++)
+        arr[i] = b[j++];
 }
 
-int main(int argc, char const *argv[])
+void mergeSort(int arr[], int l, int r)
 {
-    cout << prefixEvaluation("-+7*45+20")<<endl;
+    int mid;
+    if (l < r)
+    {
+        mid = (l + r) / 2;
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid + 1, r);
+        merge(arr, l, mid, r);
+    }
+}
+
+
+int main()
+{
+    int i = 0;
+    int arr[] = {12, 14, 15, 20, 20, 40, 60, 80, 85, 100};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int l = 0, r = size - 1;
+    mergeSort(arr, l, r);
+    for (i = 0; i < size; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
     return 0;
 }

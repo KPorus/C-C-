@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 void merge(int arr[], int l, int mid, int r)
 {
@@ -6,11 +7,11 @@ void merge(int arr[], int l, int mid, int r)
     int l1 = l, l2 = mid + 1, i = 0;
     while (l1 <= mid && l2 <= r)
     {
-        if (arr[l1] <= arr[l2])
+        if (arr[l1] >= arr[l2])
             b[i++] = arr[l1++];
         else
             b[i++] = arr[l2++];
-    } // end while loop here
+    } 
     while (l1 <= mid)
     {
         b[i++] = arr[l1++];
@@ -38,17 +39,24 @@ void mergeSort(int arr[], int l, int r)
     }
 }
 
-
 int main()
 {
     int i = 0;
-    int arr[] = {12, 14, 15, 20, 20, 40, 60, 80, 85, 100};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int l = 0, r = size - 1;
-    mergeSort(arr, l, r);
-    for (i = 0; i < size; i++)
+    int n;
+    cout << "Enter a size for the array: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter " << n << " elements in the array:" << endl;
+    for (int i = 0; i < n; i++)
     {
-        printf("%d ", arr[i]);
+        cin >> arr[i];
+    }
+    int l = 0, r = n - 1;
+    mergeSort(arr, l, r);
+    for (i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
     }
     return 0;
 }
