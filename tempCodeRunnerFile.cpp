@@ -1,55 +1,45 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-void merge(int arr[], int l, int mid, int r)
+int partition(int arr[],int l, int r)
 {
-    int b[r - l + 1];
-    int l1 = l, l2 = mid + 1, i = 0;
-    while (l1 <= mid && l2 <= r)
+    int pivot = arr[r];
+    int i = l-1;
+    for(int j = l;j<r;j++)
     {
-        if (arr[l1] <= arr[l2])
-            b[i++] = arr[l1++];
-        else
-            b[i++] = arr[l2++];
-    } 
-    while (l1 <= mid)
-    {
-        b[i++] = arr[l1++];
+        if(arr[j]<pivot)
+        {
+            i++;
+            swap(arr[i],arr[j]);
+        }
     }
-
-    while (l2 <= r)
-    {
-        b[i++] = arr[l2++];
-    }
-
-    int j = 0;
-    for (i = l; i <= r; i++)
-        arr[i] = b[j++];
+    swap(arr[i+1],arr[r]);
+    return i+1;
 }
 
-void mergeSort(int arr[], int l, int r)
+void quickSort(int arr[],int l, int r)
 {
-    int mid;
-    if (l < r)
+    if(l<r)
     {
-        mid = (l + r) / 2;
-        mergeSort(arr, l, mid);
-        mergeSort(arr, mid + 1, r);
-        merge(arr, l, mid, r);
+        int p = partition(arr,l,r);
+        quickSort(arr,l,p-1);
+        quickSort(arr,p+1,r);
     }
 }
-
-
 int main()
 {
-    int i = 0;
-    int arr[] = {12, 14, 15, 20, 20, 40, 60, 80, 85, 100};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int l = 0, r = size - 1;
-    mergeSort(arr, l, r);
-    for (i = 0; i < size; i++)
+    int n;
+    cout<<"Enter an array size ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter array elements: ";
+    for(int i = 0; i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    quickSort(arr,0,5);
+    cout<<"Sorted array: ";
+    for(int i = 0; i<5;i++)
     {
         cout<<arr[i]<<" ";
     }
-    return 0;
 }
