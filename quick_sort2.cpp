@@ -15,7 +15,7 @@ int partition(int arr[], int l, int r)
 
     for (int j = l; j < r; j++)
     {
-        if (arr[j] < pivot)
+        if (arr[j] > pivot)
         {
             i++;
             swap(arr[i], arr[j]);
@@ -25,7 +25,6 @@ int partition(int arr[], int l, int r)
     swap(arr[i + 1], arr[r]);
     return i + 1;
 }
-
 void quickSort(int arr[], int l, int r)
 {
     if (l < r)
@@ -35,7 +34,6 @@ void quickSort(int arr[], int l, int r)
         quickSort(arr, p + 1, r);
     }
 }
-
 int main()
 {
     srand(time(0)); // Seed the random number generator with the current time

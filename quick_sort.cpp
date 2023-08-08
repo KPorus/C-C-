@@ -36,9 +36,9 @@ int main()
     {
         cin>>arr[i];
     }
-    quickSort(arr,0,5);
+    quickSort(arr,0,n);
     cout<<"Sorted array: ";
-    for(int i = 0; i<5;i++)
+    for(int i = 0; i<n;i++)
     {
         cout<<arr[i]<<" ";
     }
