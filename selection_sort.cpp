@@ -1,13 +1,22 @@
-#include <iostream>
-using namespace std;
+#include<iostream>
 
-void selectionSort(int arr[], int n)
+int main()
 {
-    for (int i = 0; i < n - 1; i++)
+    int n;
+    std::cout<<"Enter the size of array: ";
+    std::cin>>n;
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
     {
-        for (int j = i + 1; j < n; j++)
+        std::cin>>arr[i];
+    }
+
+    for (int i = 0; i< n-1; i++)
+    {
+        for(int j = i+1; j< n; j++)
         {
-            if (arr[j] < arr[i])
+            if(arr[j]<arr[i])
             {
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -15,29 +24,10 @@ void selectionSort(int arr[], int n)
             }
         }
     }
-}
-
-int main()
-{
-    int n;
-    cout << "Enter a size for the array: ";
-    cin >> n;
-
-    int arr[n];
-    cout << "Enter " << n << " elements in the array:" << endl;
-    for (int i = 0; i < n; i++)
+    
+    for(int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        std::cout<<arr[i]<<" " ;
     }
-
-    selectionSort(arr, n);
-
-    cout << "Sorted array: ";
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-
     return 0;
 }
