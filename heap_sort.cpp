@@ -7,7 +7,7 @@ void heapify(int arr[], int n, int i)
     int left_child = 2 * i + 1;
     int right_child = 2 * i + 2;
 
-    if (left_child < n && arr[i] > arr[left_child])
+    if (left_child < n && arr[largest] > arr[left_child])
         largest = left_child;
 
     if (right_child < n && arr[largest] > arr[right_child])

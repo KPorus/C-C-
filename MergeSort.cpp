@@ -7,7 +7,7 @@ void merge(int arr[], int l, int mid, int r)
     int l1 = l, l2 = mid + 1, i = 0;
     while (l1 <= mid && l2 <= r)
     {
-        if (arr[l1] >= arr[l2])
+        if (arr[l1] <= arr[l2])
             b[i++] = arr[l1++];
         else
             b[i++] = arr[l2++];
