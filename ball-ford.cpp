@@ -33,7 +33,6 @@ int main()
         dis[i] = INT_MAX;
     }
     dis[1] = 0;
-    bool cycle = false;
     for (int i = 1; i <= n - 1; i++)
     {
         for (int j = 0; j < v.size(); j++)
@@ -49,6 +48,7 @@ int main()
         }
     }
 
+    bool cycle = false;
     for (int j = 0; j < v.size(); j++)
     {
         Edge ed = v[j];
@@ -79,10 +79,7 @@ int main()
                 if (reachable[a])
                 {
                     reachable[b] = true;
-                    // cout<<"dist "<< b <<" "<<"source "<< a <<"\n";
                 }
-                // cout << "dist " << b << " "
-                //      << "source " << a << "\n";
             }
         }
 
@@ -100,8 +97,7 @@ int main()
             }
             else
             {
-                // cout << "result: " << dis[d] << endl;
-                cout <<dis[d] << endl;
+                cout << "result: " << dis[d] << endl;
             }
         }
     }
