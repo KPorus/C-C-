@@ -8,7 +8,8 @@ vector<bool> visited(INF,false);
 
 vector<int> depth(INF,0);
 vector<int> height(INF, 0);
-void dfs(int a, vector<vector<int>>& graph)
+int count = 0;
+int dfs(int a, vector<vector<int>>& graph)
 {
     visited[a] = true;
     for(int v:graph[a])
@@ -16,11 +17,13 @@ void dfs(int a, vector<vector<int>>& graph)
         if(!visited[v])
         {
             depth[v] = depth[a] + 1;
+            count++;
             dfs(v, graph);
             height[a] = max(height[a], height[v]);
         }
         
     }
+    return count;
 }
 int main()
 {
